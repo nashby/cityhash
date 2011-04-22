@@ -24,14 +24,14 @@ module CityHash
     end
 
     if seed1.nil?
-      return CityHash::Internal.city_hash64(input, len)
+      return CityHash::Internal.city_hash64(input_str, len)
     end
 
     if seed2.nil?
-      return CityHash::Internal.city_hash64_with_seed(input, len, seed1.to_i)
+      return CityHash::Internal.city_hash64_with_seed(input_str, len, seed1.to_i)
     end
 
-    return CityHash::Internal.city_hash64_with_seeds(input, len, seed1.to_i, seed2.to_i)
+    return CityHash::Internal.city_hash64_with_seeds(input_str, len, seed1.to_i, seed2.to_i)
   end
 
   def self.hash128(input, seed = nil)
@@ -45,11 +45,11 @@ module CityHash
       len = input_str.size
     end
 
-    if seed1.nil?
-      return CityHash::Internal.city_hash128(input, len)
+    if seed.nil?
+      return CityHash::Internal.city_hash128(input_str, len)
     end
 
-    return CityHash::Internal.city_hash128_with_seed(input, len, seed.to_i)
+    return CityHash::Internal.city_hash128_with_seed(input_str, len, seed.to_i)
   end
 
 end
