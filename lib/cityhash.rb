@@ -46,10 +46,10 @@ module CityHash
     end
 
     if seed.empty?
-      return CityHash::Internal.city_hash128(input_str, len)
+      return CityHash::Internal.city_hash128(input_str, len).to_i
     end
 
-    return CityHash::Internal.city_hash128_with_seed(input_str, len, seed[0].to_i, seed[1].to_i)
+    return CityHash::Internal.city_hash128_with_seed(input_str, len, seed[0].to_i, seed[1].to_i).to_i
   end
 
 end

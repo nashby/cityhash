@@ -15,7 +15,11 @@ class TestCityhash < Test::Unit::TestCase
   end
 
   should "return 128bit hash" do
-    assert_equal "130554790001792308794529643941127319555", CityHash.hash128("test")
+    assert_equal 130554790001792308794529643941127319555, CityHash.hash128("test")
+  end
+
+  should "return 128bit hash with seed" do
+    assert_equal 183946415266487905135364192266033899899, CityHash.hash128("test", [123,123])
   end
 
 end
