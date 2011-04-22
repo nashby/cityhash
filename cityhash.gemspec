@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cityhash}
-  s.version = "0.2.1"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["nashby"]
-  s.date = %q{2011-04-22}
+  s.date = %q{2011-04-23}
   s.description = %q{ffi wrapper for google's cityhash}
   s.email = %q{younash@gmail.com}
   s.extra_rdoc_files = [
@@ -29,6 +29,8 @@ Gem::Specification.new do |s|
     "lib/cityhash/ext/src/Makefile",
     "lib/cityhash/ext/src/city.cc",
     "lib/cityhash/ext/src/city.h",
+    "lib/cityhash/ext/src/city_ruby_bridge.cpp",
+    "lib/cityhash/ext/src/city_ruby_bridge.h",
     "lib/cityhash/version.rb",
     "test/helper.rb",
     "test/test_cityhash.rb"
