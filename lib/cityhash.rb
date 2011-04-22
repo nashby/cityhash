@@ -8,8 +8,8 @@ module CityHash
     attach_function :city_hash64, :CityHash64, [:string, :size_t], :uint64
     attach_function :city_hash64_with_seed, :CityHash64WithSeed, [:string, :size_t, :uint64], :uint64
     attach_function :city_hash64_with_seeds, :CityHash64WithSeeds, [:string, :size_t, :uint64, :uint64], :uint64
-    attach_function :city_hash128, :CityHash128, [:string, :size_t], :string
-    attach_function :city_hash128_with_seed, :CityHash128WithSeed, [:string, :size_t, :uint64, :uint64], :string
+    attach_function :city_hash128, :CityHash128String, [:string, :size_t], :string
+    attach_function :city_hash128_with_seed, :CityHash128WithSeedString, [:string, :size_t, :uint64, :uint64], :string
   end
 
   def self.hash64(input, seed1 = nil, seed2 = nil)
