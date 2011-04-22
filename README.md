@@ -1,20 +1,20 @@
-= cityhash
+### cityhash
 
 Ruby wrapper for google's cityhash.
 
-== Install
+### Install
+ 
+    gem install cityhash
 
-  gem install cityhash
+### Usage
 
-== Usage
-
-  require 'cityhash'
+    require 'cityhash'
 	
-  CityHash.hash64("test")               # => 17703940110308125106
-  CityHash.hash64("test", 12345)        # => 14900027982776226655
-  CityHash.hash64("test", 12345, 54321) # => 11136353178704814373
+    CityHash.hash64("test")               # => 17703940110308125106
+    CityHash.hash64("test", 12345)        # => 14900027982776226655
+    CityHash.hash64("test", 12345, 54321) # => 11136353178704814373
 	
-== Contributing to cityhash
+### Contributing to cityhash
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
@@ -24,15 +24,14 @@ Ruby wrapper for google's cityhash.
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-Authors
-=======
-### [Contributors](http://github.com/nashby/cityhash/contributors)
+### Authors
+
+#### [Contributors](http://github.com/nashby/cityhash/contributors)
  - [Johannes Holzfuß](http://github.com/DataWraith)
 
 [Vasiliy Ermolovich](http://github.com/nashby/)<br/>
 
-== Copyright
+### Copyright
 
 Copyright (c) 2011 nashby. See LICENSE.txt for
 further details.
-
