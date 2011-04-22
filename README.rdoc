@@ -1,7 +1,15 @@
 = cityhash
 
-Description goes here.
+Ruby wrapper for google's cityhash.
 
+== Usage
+
+	require 'cityhash'
+	
+	CityHash.city_hash64("test", 4) # => 17703940110308125106
+	CityHash.city_hash64_with_seed("test", 4, 12345) # => 14900027982776226655
+	CityHash.city_hash64_with_seeds("test", 4, 12345, 54321) # => 11136353178704814373
+	
 == Contributing to cityhash
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
