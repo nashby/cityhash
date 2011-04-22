@@ -14,4 +14,8 @@ class TestCityhash < Test::Unit::TestCase
     assert_equal 11136353178704814373, CityHash.hash64("test", 12345, 54321)
   end
 
+  should "return 128bit hash" do
+    assert_equal "130554790001792308794529643941127319555", CityHash.hash128("test")
+  end
+
 end
