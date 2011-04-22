@@ -10,9 +10,9 @@ Ruby wrapper for google's cityhash.
 
   require 'cityhash'
 	
-  CityHash.city_hash64("test", 4) # => 17703940110308125106
-  CityHash.city_hash64_with_seed("test", 4, 12345) # => 14900027982776226655
-  CityHash.city_hash64_with_seeds("test", 4, 12345, 54321) # => 11136353178704814373
+  CityHash.hash64("test") # => 17703940110308125106
+  CityHash.hash64("test", 12345) # => 14900027982776226655
+  CityHash.hash64("test", 12345, 54321) # => 11136353178704814373
 	
 == Contributing to cityhash
  
