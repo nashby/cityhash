@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cityhash}
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["nashby"]
@@ -14,14 +14,14 @@ Gem::Specification.new do |s|
   s.email = %q{younash@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.md"
   ]
   s.files = [
     ".document",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README.rdoc",
+    "README.md",
     "Rakefile",
     "cityhash.gemspec",
     "lib/cityhash.rb",
