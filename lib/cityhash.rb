@@ -34,7 +34,7 @@ module CityHash
     return CityHash::Internal.city_hash64_with_seeds(input, len, seed1.to_i, seed2.to_i)
   end
 
-  def self.hash128(input, seed1 = nil) #seed2 = nil)
+  def self.hash128(input, seed = nil)
     input_str = input.to_s
 
     # Ruby 1.8 compatibility
@@ -49,11 +49,7 @@ module CityHash
       return CityHash::Internal.city_hash128(input, len)
     end
 
-    #if seed2.nil?
-    #  return CityHash::Internal.city_hash128_with_seed(input, len, seed1.to_i)
-    #end
-
-    #return CityHash::Internal.city_hash128_with_seeds(input, len, seed1.to_i, seed2.to_i)
+    return CityHash::Internal.city_hash128_with_seed(input, len, seed.to_i)
   end
 
 end
