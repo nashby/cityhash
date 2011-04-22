@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cityhash}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["nashby"]
@@ -23,13 +23,13 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "cityhash.gemspec",
     "lib/cityhash.rb",
     "lib/cityhash/ext/libcity.so",
     "lib/cityhash/ext/src/Makefile",
     "lib/cityhash/ext/src/city.cc",
     "lib/cityhash/ext/src/city.h",
     "lib/cityhash/version.rb",
-    "lib/libcity.so",
     "test/helper.rb",
     "test/test_cityhash.rb"
   ]
