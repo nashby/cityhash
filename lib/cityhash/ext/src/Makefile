@@ -1,2 +1,2 @@
 all:
-	g++ -shared city.cc -o ../libcity.so
+	g++ -shared -fPIC city.cc -o ../libcity.so
