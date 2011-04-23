@@ -38,7 +38,7 @@ module CityHash
     return CityHash::Internal.city_hash64_with_seeds(input_str, len, seed1.to_i & LOW64_MASK, seed2.to_i & LOW64_MASK)
   end
 
-  def self.hash128(input, seed = [])
+  def self.hash128(input, seed = nil)
     input_str = input.to_s
 
     # Ruby 1.8 compatibility
@@ -49,11 +49,14 @@ module CityHash
       len = input_str.size
     end
 
-    if seed.empty?
+    if seed.nil?
       return CityHash::Internal.city_hash128(input_str, len).to_i
     end
 
-    return CityHash::Internal.city_hash128_with_seed(input_str, len, seed[0].to_i, seed[1].to_i).to_i
+    seed_low  =  seed.to_i & LOW64_MASK
+    seed_high = (seed.to_i & HIGH64_MASK) >> 64
+
+    return CityHash::Internal.city_hash128_with_seed(input_str, len, seed_low, seed_high).to_i
   end
 
 end
