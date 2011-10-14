@@ -8,7 +8,17 @@ module CityHash
   module Internal
     extend FFI::Library
 
-    ffi_lib File.join(File.dirname(__FILE__), '..', 'ext', 'cityhash', 'cityhash.bundle')
+    ffi_lib(
+      case RUBY_PLATFORM
+        when /darwin/
+          File.join(File.dirname(__FILE__), '..', 'ext', 'cityhash', 'cityhash.bundle')
+        when /mingw|mswin|linux/
+          File.join(File.dirname(__FILE__), '..', 'ext', 'cityhash', 'cityhash.so')
+        else
+          File.join(File.dirname(__FILE__), '..', 'ext', 'cityhash', "cityhash.#{RbConfig::CONFIG['DLEXT']}")
+      end
+    )
+
     attach_function :city_hash64, :CityHash64, [:string, :size_t], :uint64
     attach_function :city_hash64_with_seed, :CityHash64WithSeed, [:string, :size_t, :uint64], :uint64
     attach_function :city_hash64_with_seeds, :CityHash64WithSeeds, [:string, :size_t, :uint64, :uint64], :uint64

@@ -27,6 +27,10 @@ Gem::Specification.new do |s|
     "cityhash.gemspec",
     "lib/cityhash.rb",
     "lib/cityhash/version.rb",
+    "ext/cityhash/city.cc",
+    "ext/cityhash/city.h",
+    "ext/cityhash/city_ruby_bridge.cpp",
+    "ext/cityhash/city_ruby_bridge.h",
     "test/helper.rb",
     "test/test_cityhash.rb"
   ]
