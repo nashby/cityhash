@@ -36,6 +36,7 @@ Ruby wrapper for google's cityhash.
  - [Johannes Holzfuß](http://github.com/DataWraith)
  - [Quin Hoxie](https://github.com/qhoxie)
  - [David Dai](https://github.com/newtonapple)
+
 [Vasiliy Ermolovich](http://github.com/nashby/)<br/>
 
 ### Copyright
