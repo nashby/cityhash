@@ -43,5 +43,5 @@ CityHash.hash128(text, seed1)       # => 6087407617808651818174120599816915369
 
 ### Copyright
 
-Copyright (c) 2011 Vasiliy Ermolovich. See LICENSE.txt for
+Copyright (c) 2012 Vasiliy Ermolovich. See LICENSE.txt for
 further details.
