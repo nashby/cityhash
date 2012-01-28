@@ -2,6 +2,7 @@
 ext/cityhash/*.o
 ext/cityhash/*.so
 ext/cityhash/Makefile
+lib/cityhash/*.so
 .bundle
 Gemfile.lock
 pkg/*
