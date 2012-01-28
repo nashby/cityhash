@@ -1,4 +1,4 @@
-### cityhash
+### cityhash [![TravisCI](https://secure.travis-ci.org/nashby/cityhash.png?branch=master)](http://travis-ci.org/nashby/cityhash)
 
 Ruby wrapper for google's cityhash.
 
@@ -17,8 +17,8 @@ Ruby wrapper for google's cityhash.
     CityHash.hash64(text)               # => 17703940110308125106
     CityHash.hash64(text, seed1)        # => 14900027982776226655
     CityHash.hash64(text, seed1, seed2) # => 11136353178704814373
-    CityHash.hash128(text)              # => 130554790001792308794529643941127319555
-    CityHash.hash128(text, seed1)       # => 1238187875708097619810923284135194760226
+    CityHash.hash128(text)              # => 1800071687761605184910580728449884026697
+    CityHash.hash128(text, seed1)       # => 6087407617808651818174120599816915369
 
 ### Contributing to cityhash
 
