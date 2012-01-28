@@ -8,17 +8,19 @@ Ruby wrapper for google's cityhash.
 
 ### Usage
 
-    require 'cityhash'
+```ruby
+require 'cityhash'
 
-    text = "test"
-    seed1 = 12345
-    seed2 = 54321
+text = "test"
+seed1 = 12345
+seed2 = 54321
 
-    CityHash.hash64(text)               # => 17703940110308125106
-    CityHash.hash64(text, seed1)        # => 14900027982776226655
-    CityHash.hash64(text, seed1, seed2) # => 11136353178704814373
-    CityHash.hash128(text)              # => 1800071687761605184910580728449884026697
-    CityHash.hash128(text, seed1)       # => 6087407617808651818174120599816915369
+CityHash.hash64(text)               # => 17703940110308125106
+CityHash.hash64(text, seed1)        # => 14900027982776226655
+CityHash.hash64(text, seed1, seed2) # => 11136353178704814373
+CityHash.hash128(text)              # => 1800071687761605184910580728449884026697
+CityHash.hash128(text, seed1)       # => 6087407617808651818174120599816915369
+```
 
 ### Contributing to cityhash
 
