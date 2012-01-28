@@ -1,6 +1,6 @@
 *.gem
-ext/cityhash/city.o
-ext/cityhash/city_ruby_bridge.o
+ext/cityhash/*.o
+ext/cityhash/*.so
 ext/cityhash/Makefile
 .bundle
 Gemfile.lock

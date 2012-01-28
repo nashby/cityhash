@@ -5,8 +5,7 @@ require 'rake/clean'
 
 NAME = 'cityhash'
 
-file "lib/#{NAME}/#{NAME}.so" =>
-    Dir.glob("ext/#{NAME}/*{.rb,.c}") do
+file "lib/#{NAME}/#{NAME}.so" => Dir.glob("ext/#{NAME}") do
   Dir.chdir("ext/#{NAME}") do
     ruby "extconf.rb"
     sh "make"

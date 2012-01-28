@@ -41,5 +41,5 @@ Ruby wrapper for google's cityhash.
 
 ### Copyright
 
-Copyright (c) 2011 nashby. See LICENSE.txt for
+Copyright (c) 2011 Vasiliy Ermolovich. See LICENSE.txt for
 further details.
