@@ -1,4 +1,5 @@
 require 'ffi'
+require 'cityhash/version'
 
 module CityHash
 
@@ -36,7 +37,7 @@ module CityHash
       len = input_str.size
     end
 
-    return CityHash::Internal.city_hash64(input_str, len) if seed1.nil? 
+    return CityHash::Internal.city_hash64(input_str, len) if seed1.nil?
     return CityHash::Internal.city_hash64_with_seed(input_str, len, seed1.to_i & LOW64_MASK) if seed2.nil?
 
     CityHash::Internal.city_hash64_with_seeds(input_str, len, seed1.to_i & LOW64_MASK, seed2.to_i & LOW64_MASK)
@@ -59,5 +60,4 @@ module CityHash
 
     CityHash::Internal.city_hash128_with_seed(input_str, len, seed_low, seed_high).to_i
   end
-
 end
