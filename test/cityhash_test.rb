@@ -14,11 +14,11 @@ describe CityHash do
   end
 
   it "returns 128bit hash" do
-    assert_equal 130554790001792308794529643941127319555, CityHash.hash128("test")
+    assert_equal 1800071687761605184910580728449884026697, CityHash.hash128("test")
   end
 
   it "returns 128bit hash with seed" do
     seed = (123 << 64) | 123
-    assert_equal 183946415266487905135364192266033899899, CityHash.hash128("test", seed)
+    assert_equal 1631427474705635869517741677842296176559, CityHash.hash128("test", seed)
   end
 end
