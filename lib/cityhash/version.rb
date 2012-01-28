@@ -1,3 +1,3 @@
-module Cityhash
+module CityHash
   VERSION = "0.5.0"
 end

@@ -4,7 +4,7 @@ require "cityhash/version"
 
 Gem::Specification.new do |s|
   s.name        = "cityhash"
-  s.version     = Cityhash::VERSION
+  s.version     = CityHash::VERSION
   s.authors     = ["Vasiliy Ermolovich"]
   s.email       = ["younash@gmail.com"]
   s.homepage    = "http://github.com/nashby/cityhash"
