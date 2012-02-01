@@ -1,8 +1,7 @@
-*.gem
-ext/cityhash/*.o
-ext/cityhash/*.so
-ext/cityhash/Makefile
-lib/cityhash/*.so
+*.so
+*.bundle
 .bundle
 Gemfile.lock
 pkg/*
+tmp/*
+vendor/bundle
