@@ -5,6 +5,10 @@ module CityHash
   LOW64_MASK  = 0x0000000000000000ffffffffffffffff
   HIGH64_MASK = 0xffffffffffffffff0000000000000000
 
+  def self.hash32(input)
+    Internal.hash32(input)
+  end
+
   def self.hash64(input, seed1=nil, seed2=nil)
     return Internal.hash64(input) if seed1.nil?
     return Internal.hash64_with_seed(input, seed1.to_i) if seed2.nil?

@@ -15,6 +15,7 @@ text = "test"
 seed1 = 12345
 seed2 = 54321
 
+CityHash.hash32(text)               # => 1633095781
 CityHash.hash64(text)               # => 8581389452482819506
 CityHash.hash64(text, seed1)        # => 9154302171269876511
 CityHash.hash64(text, seed1, seed2) # => 4854399283587686019

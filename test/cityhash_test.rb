@@ -1,6 +1,10 @@
 require 'test_helper'
 
 describe CityHash do
+  it 'returns 32bit hash' do
+    assert_equal 1633095781, CityHash.hash32("test")
+  end
+
   it 'returns 64bit hash' do
     assert_equal 8581389452482819506, CityHash.hash64("test")
   end

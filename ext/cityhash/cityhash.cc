@@ -5,6 +5,11 @@
 // calling rb_define_method()
 typedef VALUE (ruby_method)(...);
 
+extern "C" VALUE cityhash_hash32(VALUE mod, VALUE input)
+{
+  return ULL2NUM(CityHash32(StringValuePtr(input), RSTRING_LEN(input)));
+}
+
 extern "C" VALUE cityhash_hash64(VALUE mod, VALUE input)
 {
   return ULL2NUM(CityHash64(StringValuePtr(input), RSTRING_LEN(input)));
@@ -37,6 +42,8 @@ extern "C" void Init_cityhash()
 {
   VALUE mCityHash = rb_define_module("CityHash");
   VALUE mInternal = rb_define_module_under(mCityHash, "Internal");
+
+  rb_define_singleton_method(mInternal, "hash32", (ruby_method*) &cityhash_hash32, 1);
 
   rb_define_singleton_method(mInternal, "hash64", (ruby_method*) &cityhash_hash64, 1);
   rb_define_singleton_method(mInternal, "hash64_with_seed", (ruby_method*) &cityhash_hash64_with_seed, 2);
