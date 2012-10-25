@@ -15,11 +15,11 @@ text = "test"
 seed1 = 12345
 seed2 = 54321
 
-CityHash.hash64(text)               # => 17703940110308125106
-CityHash.hash64(text, seed1)        # => 14900027982776226655
-CityHash.hash64(text, seed1, seed2) # => 11136353178704814373
-CityHash.hash128(text)              # => 1800071687761605184910580728449884026697
-CityHash.hash128(text, seed1)       # => 6087407617808651818174120599816915369
+CityHash.hash64(text)               # => 8581389452482819506
+CityHash.hash64(text, seed1)        # => 9154302171269876511
+CityHash.hash64(text, seed1, seed2) # => 4854399283587686019
+CityHash.hash128(text)              # => 124124989950401219618153994964897029896
+CityHash.hash128(text, seed1)       # => 101668641288246442316643001405184598611
 ```
 
 ### Contributing to cityhash
