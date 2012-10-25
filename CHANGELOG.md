@@ -1,4 +1,4 @@
-## dev ##
+## 0.7.0 (October 25, 2012) ##
 
 ### enhancements
   * add CityHash.hash32 method
