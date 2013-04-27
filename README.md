@@ -21,6 +21,8 @@ CityHash.hash64(text, seed1)        # => 9154302171269876511
 CityHash.hash64(text, seed1, seed2) # => 4854399283587686019
 CityHash.hash128(text)              # => 124124989950401219618153994964897029896
 CityHash.hash128(text, seed1)       # => 101668641288246442316643001405184598611
+CityHash.hash128crc(text)           # => 124124989950401219618153994964897029896
+CityHash.hash128crc(text, seed1)    # => 101668641288246442316643001405184598611
 ```
 
 ### Contributing to cityhash

@@ -1,6 +1,10 @@
 #include <ruby.h>
 #include "city.h"
 
+#ifdef __SSE4_2__
+#include "citycrc.h"
+#endif
+
 // Use this typedef to make the compiler happy when
 // calling rb_define_method()
 typedef VALUE (ruby_method)(...);
@@ -38,6 +42,21 @@ extern "C" VALUE cityhash_hash128_with_seed(VALUE mod, VALUE input, VALUE seed_s
   return rb_str_new((char *)&hash, sizeof(hash));
 }
 
+#ifdef __SSE4_2__
+extern "C" VALUE cityhash_hashcrc128(VALUE mod, VALUE input)
+{
+  uint128 hash = CityHashCrc128(StringValuePtr(input), RSTRING_LEN(input));
+  return rb_str_new((char *)&hash, sizeof(hash));
+}
+
+extern "C" VALUE cityhash_hashcrc128_with_seed(VALUE mod, VALUE input, VALUE seed_string)
+{
+  uint128 seed = *(uint128 *)StringValuePtr(seed_string);
+  uint128 hash = CityHashCrc128WithSeed(StringValuePtr(input), RSTRING_LEN(input), seed);
+  return rb_str_new((char *)&hash, sizeof(hash));
+}
+#endif
+
 extern "C" void Init_cityhash()
 {
   VALUE mCityHash = rb_define_module("CityHash");
@@ -51,4 +70,9 @@ extern "C" void Init_cityhash()
 
   rb_define_singleton_method(mInternal, "hash128", (ruby_method*) &cityhash_hash128, 1);
   rb_define_singleton_method(mInternal, "hash128_with_seed", (ruby_method*) &cityhash_hash128_with_seed, 2);
+
+#ifdef __SSE4_2__
+  rb_define_singleton_method(mInternal, "hash128crc", (ruby_method*) &cityhash_hashcrc128, 1);
+  rb_define_singleton_method(mInternal, "hash128crc_with_seed", (ruby_method*) &cityhash_hashcrc128_with_seed, 2);
+#endif
 }

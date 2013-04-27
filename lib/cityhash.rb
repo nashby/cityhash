@@ -16,12 +16,32 @@ module CityHash
   end
 
   def self.hash128(input, seed=nil)
-    if seed
-      seed = [seed & LOW64_MASK, seed & HIGH64_MASK >> 64].pack('QQ')
-      digest = Internal.hash128_with_seed(input, seed)
+    digest = if seed
+      Internal.hash128_with_seed(input, packed_seed(seed))
     else
-      digest = Internal.hash128(input)
+      Internal.hash128(input)
     end
+
+    unpacked_digest(digest)
+  end
+
+  def self.hash128crc(input, seed=nil)
+    digest = if seed
+      Internal.hash128crc_with_seed(input, packed_seed(seed))
+    else
+      Internal.hash128crc(input)
+    end
+
+    unpacked_digest(digest)
+  end
+
+  private
+
+  def self.packed_seed(seed)
+    [seed & LOW64_MASK, seed & HIGH64_MASK >> 64].pack('QQ')
+  end
+
+  def self.unpacked_digest(digest)
     [0..7, 8..15].map { |r| digest[r].unpack('Q').first.to_s }.join.to_i
   end
 end
