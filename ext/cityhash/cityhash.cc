@@ -55,6 +55,13 @@ extern "C" VALUE cityhash_hashcrc128_with_seed(VALUE mod, VALUE input, VALUE see
   uint128 hash = CityHashCrc128WithSeed(StringValuePtr(input), RSTRING_LEN(input), seed);
   return rb_str_new((char *)&hash, sizeof(hash));
 }
+
+extern "C" VALUE cityhash_hashcrc256(VALUE mod, VALUE input)
+{
+  uint64 hash[3] = {};
+  CityHashCrc256(StringValuePtr(input), RSTRING_LEN(input), hash);
+  return rb_str_new((char *)&hash, sizeof(hash));
+}
 #endif
 
 extern "C" void Init_cityhash()
@@ -74,5 +81,7 @@ extern "C" void Init_cityhash()
 #ifdef __SSE4_2__
   rb_define_singleton_method(mInternal, "hash128crc", (ruby_method*) &cityhash_hashcrc128, 1);
   rb_define_singleton_method(mInternal, "hash128crc_with_seed", (ruby_method*) &cityhash_hashcrc128_with_seed, 2);
+
+  rb_define_singleton_method(mInternal, "hash256crc", (ruby_method*) &cityhash_hashcrc256, 1);
 #endif
 }

@@ -34,4 +34,8 @@ describe CityHash do
     seed = (123 << 64) | 123
     assert_equal 1834994000056895780313918994795281207519, CityHash.hash128crc("test", seed)
   end
+
+  it "returns 256bit crc hash" do
+    assert_equal 11964743055457135893972873789222488394617411264226841264756, CityHash.hash256crc("test")
+  end
 end

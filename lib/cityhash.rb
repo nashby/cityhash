@@ -35,6 +35,12 @@ module CityHash
     unpacked_digest(digest)
   end
 
+  def self.hash256crc(input)
+    digest = Internal.hash256crc(input)
+
+    [0..7, 8..15, 16..23].map { |r| digest[r].unpack('Q').first.to_s }.join.to_i
+  end
+
   private
 
   def self.packed_seed(seed)
