@@ -6,16 +6,22 @@ module CityHash
   HIGH64_MASK = 0xffffffffffffffff0000000000000000
 
   def self.hash32(input)
+    input = input.to_s
+
     Internal.hash32(input)
   end
 
   def self.hash64(input, seed1=nil, seed2=nil)
+    input = input.to_s
+
     return Internal.hash64(input) if seed1.nil?
     return Internal.hash64_with_seed(input, seed1.to_i) if seed2.nil?
     Internal.hash64_with_seeds(input, seed1.to_i, seed2.to_i)
   end
 
   def self.hash128(input, seed=nil)
+    input = input.to_s
+
     digest = if seed
       Internal.hash128_with_seed(input, packed_seed(seed))
     else
@@ -26,6 +32,8 @@ module CityHash
   end
 
   def self.hash128crc(input, seed=nil)
+    input = input.to_s
+
     digest = if seed
       Internal.hash128crc_with_seed(input, packed_seed(seed))
     else
@@ -36,6 +44,7 @@ module CityHash
   end
 
   def self.hash256crc(input)
+    input = input.to_s
     digest = Internal.hash256crc(input)
 
     [0..7, 8..15, 16..23].map { |r| digest[r].unpack('Q').first.to_s }.join.to_i
