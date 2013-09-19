@@ -6,10 +6,6 @@ Ruby wrapper for google's cityhash.
 
     gem install cityhash
 
-Since OSX uses `llvm-gcc-4.2` that doesn't support `-march=native` flag you have to compile `cityhash` lib with `clang++` compiler:
-
-    CXX=/usr/bin/clang++ gem install cityhash
-
 ### Usage
 
 ```ruby
