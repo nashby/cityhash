@@ -32,7 +32,7 @@ CityHash.hash256crc(text)           # => 119647430554571358939728737892224883946
 
 ### Important note
 
-CityHash do not maintain backward compatibility with previous versions. You should use CityHash for persitent storage, or else never upgrade it. 
+CityHash do not maintain backward compatibility with previous versions. You should not use CityHash for persitent storage, or else never upgrade it. 
 
 If you need backward compatibility please consider other hash functions like [xxHash](https://github.com/nashby/xxhash) or [MurmurHash](https://github.com/ksss/digest-murmurhash)
 
