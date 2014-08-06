@@ -30,6 +30,12 @@ CityHash.hash128crc(text, seed1)    # => 101668641288246442316643001405184598611
 CityHash.hash256crc(text)           # => 11964743055457135893972873789222488394617411264226841264756
 ```
 
+### Important note
+
+CityHash do not maintain backward compatibility with previous versions. You should not use CityHash for persitent storage, or else never upgrade it. 
+
+If you need backward compatibility please consider other hash functions like [xxHash](https://github.com/nashby/xxhash) or [MurmurHash](https://github.com/ksss/digest-murmurhash)
+
 ### Contributing to cityhash
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
