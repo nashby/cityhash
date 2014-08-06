@@ -34,6 +34,8 @@ CityHash.hash256crc(text)           # => 119647430554571358939728737892224883946
 
 CityHash do not maintain backward compatibility with previous versions. You should use CityHash for persitent storage, or else never upgrade it. 
 
+If you need backward compatibility please consider other hash functions like [xxHash](https://github.com/nashby/xxhash) or [MurmurHash](https://github.com/ksss/digest-murmurhash)
+
 ### Contributing to cityhash
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
