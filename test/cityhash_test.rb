@@ -42,4 +42,12 @@ describe CityHash do
   it 'converts input data to string' do
     assert_equal CityHash.hash128('1337'), CityHash.hash128(1337)
   end
+
+  it 'does not core when you pass it nil' do
+    assert_raises TypeError do
+      CityHash::Internal.hash64(nil)
+    end
+
+    CityHash.hash64(nil)
+  end
 end
