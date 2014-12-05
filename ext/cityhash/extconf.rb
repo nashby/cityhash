@@ -1,6 +1,7 @@
 require 'mkmf'
 
-RbConfig::MAKEFILE_CONFIG['CXX'] = ENV['CXX'] if ENV['CXX']
+cxx = ENV['CXX'] || with_config('CXX')
+RbConfig::MAKEFILE_CONFIG['CXX'] = ENV['CXX'] if cxx
 
 %w{g O3 Wall march=native}.each do |flag|
   flag = "-#{flag}"
