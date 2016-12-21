@@ -63,7 +63,7 @@ extern "C" VALUE cityhash_hashcrc128_with_seed(VALUE mod, VALUE input, VALUE see
 
 extern "C" VALUE cityhash_hashcrc256(VALUE mod, VALUE input)
 {
-  uint64 hash[3] = {};
+  uint64 hash[4] = {};
   CityHashCrc256(StringValuePtr(input), RSTRING_LEN(input), hash);
   return rb_str_new((char *)&hash, sizeof(hash));
 }
