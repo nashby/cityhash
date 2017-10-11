@@ -4,6 +4,7 @@
   * update cityhash lib version
   * ditch old rubies. support only Ruby 2.0+
   * let the environment dictate the arch
+  * do not define CRC methods if it's not supported by system
 
 ## 0.8.1 (May 18, 2013) ##
 
