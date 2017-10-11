@@ -27,15 +27,21 @@ describe CityHash do
   end
 
   it 'returns 128bit crc hash' do
+    skip unless CityHash.respond_to?(:hash128crc)
+
     assert_equal 124124989950401219618153994964897029896, CityHash.hash128crc("test")
   end
 
   it 'returns 128bit crc hash with seed' do
+    skip unless CityHash.respond_to?(:hash128crc)
+
     seed = (123 << 64) | 123
     assert_equal 1834994000056895780313918994795281207519, CityHash.hash128crc("test", seed)
   end
 
   it 'returns 256bit crc hash' do
+    skip unless CityHash.respond_to?(:hash256crc)
+
     assert_equal 11964743055457135893972873789222488394617411264226841264756, CityHash.hash256crc("test")
   end
 

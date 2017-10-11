@@ -31,23 +31,27 @@ module CityHash
     unpacked_digest(digest)
   end
 
-  def self.hash128crc(input, seed=nil)
-    input = input.to_s
+  if Internal.respond_to?(:hash128crc)
+    def self.hash128crc(input, seed=nil)
+      input = input.to_s
 
-    digest = if seed
-      Internal.hash128crc_with_seed(input, packed_seed(seed))
-    else
-      Internal.hash128crc(input)
+      digest = if seed
+        Internal.hash128crc_with_seed(input, packed_seed(seed))
+      else
+        Internal.hash128crc(input)
+      end
+
+      unpacked_digest(digest)
     end
-
-    unpacked_digest(digest)
   end
 
-  def self.hash256crc(input)
-    input = input.to_s
-    digest = Internal.hash256crc(input)
+  if Internal.respond_to?(:hash256crc)
+    def self.hash256crc(input)
+      input = input.to_s
+      digest = Internal.hash256crc(input)
 
-    [0..7, 8..15, 16..23].map { |r| digest[r].unpack('Q').first.to_s }.join.to_i
+      [0..7, 8..15, 16..23].map { |r| digest[r].unpack('Q').first.to_s }.join.to_i
+    end
   end
 
   private
