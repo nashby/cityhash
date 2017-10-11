@@ -1,3 +1,10 @@
+## 0.9.0 (October 11, 2017) ##
+
+### enhancements
+  * update cityhash lib version
+  * ditch old rubies. support only Ruby 2.0+
+  * let the environment dictate the arch
+
 ## 0.8.1 (May 18, 2013) ##
 
 ### bugfixes
