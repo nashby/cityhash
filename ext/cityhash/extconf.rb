@@ -8,4 +8,6 @@ RbConfig::MAKEFILE_CONFIG['CXX'] = cxx if cxx
   $CPPFLAGS += " #{flag}" unless $CPPFLAGS.split.include? flag
 end
 
+$CPPFLAGS += " -std=c++11"
+
 create_makefile('cityhash/cityhash')

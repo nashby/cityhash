@@ -1,3 +1,8 @@
+## 0.9.1 (TBD) ##
+
+### bugfixes
+  * fix C++ compilation on newer macOS/Xcode versions by adding -std=c++11 flag
+
 ## 0.9.0 (October 11, 2017) ##
 
 ### enhancements
